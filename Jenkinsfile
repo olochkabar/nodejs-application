@@ -23,7 +23,7 @@ pipeline {
             }
         }
         }
-        stage ( 'artifactory') {
+        stage ( 'artifactory1') {
             steps {
                 sh "npm publish"
             }
