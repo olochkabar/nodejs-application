@@ -1,8 +1,6 @@
 node {
         stage ( 'git clone') {
-            {
-                git 'https://github.com/olochkabar/nodejs-application'
-            }
+             git 'https://github.com/olochkabar/nodejs-application'
         }
         stage ( 'build') {
             nodejs(nodeJSInstallationName: 'nodejs21.1.0') {
