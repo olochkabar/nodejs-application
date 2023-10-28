@@ -10,7 +10,7 @@ node {
         stage ( 'code quality') {
              def scannerHome = tool 'sonar';
               withSonarQubeEnv() {
-               sh "${scannerHome}/bin/sonar-scanner"
+               sh "${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=nodejsapp"
             }
         }
         /*stage ( 'artifactory1') {
