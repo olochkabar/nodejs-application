@@ -12,7 +12,9 @@ node {
             }
         }
         stage ( 'artifactory') {
-             sh 'npm publish' 
+             nodejs(nodeJSInstallationName: 'nodejs') {
+               sh 'npm publish'
+            }
         }
         stage ( 'docker build') {
                     withDockerRegistry(credentialsId: 'docker', toolName: 'docker') {
