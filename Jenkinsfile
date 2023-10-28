@@ -13,9 +13,6 @@ pipeline {
             }
         }
         stage ( 'code quality') {
-            tools {
-                sonarQube 'sonar'
-            }
             steps {
                 script {
                     withSonarQubeEnv() {
