@@ -7,16 +7,13 @@ node {
              sh 'npm install'
            // }
         }  
-        /*stage ( 'code quality') {
-            steps {
-                script {
-                    withSonarQubeEnv() {
-                     sh "npm run sonar -Dsonar.projectKey=nodejsapp"
-                }
+        stage ( 'code quality') {
+             def scannerHome = tool 'sonar';
+              withSonarQubeEnv() {
+               sh "${scannerHome}/bin/sonar-scanner"
             }
         }
-        }
-        stage ( 'artifactory1') {
+        /*stage ( 'artifactory1') {
             //nodejs(nodeJSInstallationName: 'nodejs') {
              sh 'npm publish'
            // }
