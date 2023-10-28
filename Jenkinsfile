@@ -1,7 +1,7 @@
 pipeline {
     agent any
     tools {
-        sonarqube scanner 'sonar'
+        sonarqube scanner "sonar"
     }
     stages{
         stage ( 'git clone') {
