@@ -3,7 +3,7 @@ node {
              git 'https://github.com/olochkabar/nodejs-application'
         }
         stage ( 'build') {
-            nodejs(nodeJSInstallationName: 'nodejs21.1.0') {
+            nodejs(nodeJSInstallationName: 'nodejs') {
              sh 'npm install'
             }
         }  
@@ -17,7 +17,7 @@ node {
         }
         }*/
         stage ( 'artifactory1') {
-            nodejs(nodeJSInstallationName: 'nodejs21.1.0') {
+            nodejs(nodeJSInstallationName: 'nodejs') {
              sh 'npm publish'
             }
         }  
