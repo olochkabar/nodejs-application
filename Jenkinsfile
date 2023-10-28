@@ -5,7 +5,7 @@ node {
         stage ( 'build') {
             //nodejs(nodeJSInstallationName: 'nodejs') {
              sh 'npm install'
-            }
+           // }
         }  
         /*stage ( 'code quality') {
             steps {
@@ -19,7 +19,7 @@ node {
         stage ( 'artifactory1') {
             //nodejs(nodeJSInstallationName: 'nodejs') {
              sh 'npm publish'
-            }
+           // }
         }  
         stage ( 'docker build') {
                     withDockerRegistry(credentialsId: 'docker', toolName: 'docker') {
