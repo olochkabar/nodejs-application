@@ -1,8 +1,6 @@
 pipeline {
     agent any
-    tools {
-        sonarQube "sonar"
-    }
+    
     stages{
         stage ( 'git clone') {
             steps {
@@ -15,6 +13,9 @@ pipeline {
             }
         }
         stage ( 'code quality') {
+            tools {
+                sonarQube 'sonar'
+            }
             steps {
                 script {
                     withSonarQubeEnv() {
