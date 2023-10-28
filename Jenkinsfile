@@ -15,12 +15,12 @@ node {
                 }
             }
         }
-        }*/
+        }
         stage ( 'artifactory1') {
             //nodejs(nodeJSInstallationName: 'nodejs') {
              sh 'npm publish'
            // }
-        }  
+        }  */
         stage ( 'docker build') {
                     withDockerRegistry(credentialsId: 'docker', toolName: 'docker') {
                     sh "docker build -t olochkabar/nodejsapp:1 ."
