@@ -3,9 +3,7 @@ node {
              git 'https://github.com/olochkabar/nodejs-application'
         }
         stage ( 'build') {
-            //nodejs(nodeJSInstallationName: 'nodejs') {
              sh 'npm install'
-           // }
         }  
         stage ( 'code quality') {
              def scannerHome = tool 'sonar';
@@ -13,12 +11,10 @@ node {
                sh "${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=nodejsapp"
             }
         }
-        /*stage ( 'artifactory1') {
-            //nodejs(nodeJSInstallationName: 'nodejs') {
+        stage ( 'artifactory1') {
              sh 'npm publish'
-           // }
-        }  */
-        stage ( 'docker build') {
+        }
+        /*stage ( 'docker build') {
                     withDockerRegistry(credentialsId: 'docker', toolName: 'docker') {
                     sh "docker build -t olochkabar/nodejsapp:1 ."
                     }
@@ -27,5 +23,5 @@ node {
                     withDockerRegistry(credentialsId: 'docker', toolName: 'docker') {
                     sh "docker push olochkabar/nodejsapp:1"
                     }
-            }
+            }*/
 }
