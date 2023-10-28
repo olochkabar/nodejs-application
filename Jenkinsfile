@@ -11,9 +11,11 @@ node {
                sh "${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=nodejsapp"
             }
         }
-        /*stage ( 'artifactory') {
-             sh 'npm publish'
-        }*/
+        stage ( 'artifactory') {
+            nexusArtifactUploader credentialsId: 'NEXUS', groupId: 'nodejsappgroup', nexusUrl: '99.79.46.124:8081', nexusVersion: 'nexus3', protocol: 'http', repository: 'http://99.79.46.124:8081/repository/nodejsapp/', version: 'OSS 3.61.0-02' {
+             sh 'npm publish' 
+             }
+        }
         stage ( 'docker build') {
                     withDockerRegistry(credentialsId: 'docker', toolName: 'docker') {
                     sh "docker build -t olochkabar/nodejsapp:1 ."
