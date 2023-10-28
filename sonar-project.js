@@ -1,1 +1,1 @@
-sonar.projectKey=nodejsapp
+//sonar.projectKey=nodejsapp
