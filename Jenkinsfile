@@ -16,7 +16,7 @@ pipeline {
             steps {
                 script {
                     withSonarQubeEnv() {
-                     sh "npm run sonar"
+                     sh "npm run sonar -Dsonar.projectKey=nodejsapp"
                 }
             }
         }
