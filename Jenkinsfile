@@ -11,7 +11,7 @@ node {
                sh "${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=nodejsapp"
             }
         }
-        stage ( 'artifactory1') {
+        stage ( 'artifactory') {
              sh 'npm publish'
         }
         /*stage ( 'docker build') {
