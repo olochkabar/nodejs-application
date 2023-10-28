@@ -4,7 +4,7 @@
   "description": "This Project explains all Node JS examples",
   "main": "app.js",
   "publishConfig": {
-    "registry": "http://3.236.129.45:8081/repository/ebay-npm-repo/"
+    "registry": "http://99.79.46.124:8081/repository/nodejsapp/"
   },
   "scripts": {
     "server": "http-server -c-1 -p 9999",
@@ -26,7 +26,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/LandmakTechnology/nodejs-application"
+    "url": "https://github.com/olochkabar/nodejs-application"
   },
   "keywords": [
     "node",

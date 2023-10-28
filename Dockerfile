@@ -1,6 +1,6 @@
-FROM node:10
-WORKDIR /usr/app
+FROM node:21-alpine3.17
+WORKDIR /home/node/app
 COPY . .
 RUN npm install
-EXPOSE 9981
+EXPOSE 8888
 CMD ["node","app.js"]
