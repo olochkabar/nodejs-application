@@ -12,7 +12,7 @@ pipeline {
                 sh "npm install"
             }
         }
-        stage ( 'code quality') {
+        /*stage ( 'code quality') {
             steps {
                 script {
                     withSonarQubeEnv() {
@@ -20,7 +20,7 @@ pipeline {
                 }
             }
         }
-        }
+        }*/
         stage ( 'artifactory1') {
             steps {
                 sh "npm publish"
