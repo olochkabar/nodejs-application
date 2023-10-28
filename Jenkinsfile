@@ -25,20 +25,16 @@ node {
         }  
         stage ( 'docker build') {
             {
-                script {
                     withDockerRegistry(credentialsId: 'docker', toolName: 'docker') {
                     sh "docker build -t olochkabar/nodejsapp:1 ."
                     }
                 }
             }
-        }
         stage ( 'docker push') {
             {
-                script {
                     withDockerRegistry(credentialsId: 'docker', toolName: 'docker') {
                     sh "docker push olochkabar/nodejsapp:1"
                     }
                 }
             }
-        }
     }
